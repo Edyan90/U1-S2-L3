@@ -222,7 +222,7 @@ for (let index = 0; index < charactersNames.length; index++) {
     charactersNames[index] === femaleCharacters[0] ||
     charactersNames[index] === femaleCharacters[1]
   ) {
-    charactersNames[index].typeof();
+    charactersNames[index].splice(charactersNames[index], 1);
   }
 }
 console.log(charactersNames);

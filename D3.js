@@ -112,8 +112,6 @@ const starWarsCharacters = [
 */
 
 for (let index = 0; index < starWarsCharacters.length; index++) {
-  /* console.log("index attuale:", index);
-  console.log("elemento attuale", starWarsCharacters[index].name); */
   charactersNames.push(starWarsCharacters[index].name);
 }
 console.log(charactersNames);
@@ -222,10 +220,21 @@ for (let index = 0; index < charactersNames.length; index++) {
     charactersNames[index] === femaleCharacters[0] ||
     charactersNames[index] === femaleCharacters[1]
   ) {
-    charactersNames[index].splice(charactersNames[index], 1);
+    charactersNames.splice(index, 1);
   }
 }
 console.log(charactersNames);
+
+//oppure in caso generalizzato
+
+for (let index = 0; index < charactersNames.length; index++) {
+  for (let i = 0; i < femaleCharacters.length; i++) {
+    if (charactersNames[index] === femaleCharacters[i].name) {
+      charactersNames.splice(index, 1);
+    }
+  }
+  console.log(charactersNames);
+}
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
